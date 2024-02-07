@@ -1,5 +1,7 @@
 "use strict";
 
+function roulleteRoll() {
+
 let A = [0, 34, 10, 21, 28, 4, 18, 9, 27, 22, 12, 3, 17, 20, 11, 33, 2, 10, 32, -1, 15, 8, 25, 1, 31, 20, 14, 30, 7, 24, 29, 35, 6, 13, 23, 19, 5, 36];
 
 let selectedInt = (Math.random()*37)-1;
@@ -21,6 +23,7 @@ for(i = 0; i < A.length; i++) {
 
         selectedIntIndex = i;
         //console.log(selectedIntIndex);
+
 
     }
 
@@ -88,12 +91,33 @@ if ((selectedInt >= 0) && (selectedInt <= 18)) {selectedString = selectedString 
 if (selectedInt > 18) {selectedString = selectedString + Passe;}
 
 
+return selectedString;
+
+
 //selectedString = selectedString + "hehehe";
 
 //print(selectedInt);
 
 //console.log(selectedInt);
 
-console.log(selectedString);
+//console.log(selectedString);
 
 //console.log(selectedIntIndex);
+
+}
+
+let div1 = document.getElementById("Results");
+
+function gamble() {
+
+    let div2 = document.createElement("div");
+    let T = document.createTextNode(roulleteRoll());
+    div2.appendChild(T);
+    div1.appendChild(div2);
+
+    //console.log(div);
+
+
+
+
+}
