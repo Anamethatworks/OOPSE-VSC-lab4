@@ -94,30 +94,25 @@ if (selectedInt > 18) {selectedString = selectedString + Passe;}
 return selectedString;
 
 
-//selectedString = selectedString + "hehehe";
-
-//print(selectedInt);
-
-//console.log(selectedInt);
-
-//console.log(selectedString);
-
-//console.log(selectedIntIndex);
-
 }
 
 let div1 = document.getElementById("Results");
 
+let sock;
+sock = new WebSocket("ws://"+document.location.host+"/sock");
+
 function gamble() {
 
     let div2 = document.createElement("div");
-    let T = document.createTextNode(roulleteRoll());
+    let str = roulleteRoll();
+    let T = document.createTextNode(str);
     div2.appendChild(T);
     div1.appendChild(div2);
-
-    //console.log(div);
-
-
-
+    sock.send(str)
 
 }
+
+
+
+ 
+

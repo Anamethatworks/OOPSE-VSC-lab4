@@ -1,7 +1,7 @@
 import asyncio
 import os, os.path
 import tornado.web
-import Index, Quote, TemplateTest, ExampleUsers, RoulleteLab1v1
+import Index, Quote, TemplateTest, ExampleUsers, RoulleteLab1v1, sock
 
 HTMLDIR = os.path.abspath(
     os.path.join(
@@ -17,7 +17,8 @@ def makeApp():
         ("/quote",Quote.Handler),
         ("/fancy",TemplateTest.Handler),
         ("/profile/.*",ExampleUsers.Handler),
-        ("/roullete", RoulleteLab1v1.Handler)
+        ("/roullete", RoulleteLab1v1.Handler),
+        ("/sock", sock.Handler)
     ]
     app = tornado.web.Application(
         endpoints,
